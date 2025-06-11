@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-#u(hj!$1x+r41==*b$z+tm&*vmfjg5q1&yv$dqo-rk51ialjx9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['your-django-backend-url.onrender.com']
+ALLOWED_HOSTS = ['resume-495b.onrender.com']
 
 RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY") # site key
 RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY") # secret key
