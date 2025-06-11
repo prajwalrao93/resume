@@ -1,0 +1,80 @@
+{% extends 'resume/base.html' %}
+
+{% block content %}
+
+
+<br><br>
+<div class="container-fluid">
+    <div class="container">
+    <h2>Education:</h2><br>
+    </div>
+{% if education %}
+    <ul>
+        {% for edu in education %}
+        <div class="card border-0">
+          <h4 class="card-header">{{ edu.degree }}</h4>
+          <div class="card-body">
+              {% if edu.end_year %}
+              <p class="card-text">
+                  Start Year: {{ edu.start_year }}<br>
+                  End Year: {{ edu.end_year }}<br>
+                  Subjects: {{ edu.subjects }}<br>
+                  College: {{ edu.college }}<br>
+                  University: {{ edu.university }}<br>
+              </p>
+              {% else %}
+              <p class="card-text">
+                  Start Year: {{ edu.start_year }}<br>
+                  Subjects: {{ edu.subjects }}<br>
+                  College: {{ edu.college }}<br>
+                  University: {{ edu.university }}<br>
+              </p>
+              {% endif %}
+          </div>
+        </div>
+        <br>
+        {% endfor %}
+        <div class="card border-0">
+          <h5 class="card-header">BS in DataScience</h5>
+          <div class="card-body">
+            <p class="card-text">
+                Started with the journey towards graduating with BS degree from IIT Madras in Data Science.<br>
+                Start Year: 2025<br>
+                College: IIT Madras<br>
+            </p>
+          </div>
+        </div>
+    </ul>
+    </div>
+{% endif %}
+
+
+<br><br>
+<div class="container-fluid">
+    <h2>Certificates:</h2>
+    <br>
+    <div class="col-md-6">
+        {% if certificates %}
+        {% for certificate in certificates %}
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-secondary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample{{ forloop.counter }}" aria-expanded="false" aria-controls="multiCollapseExample{{ forloop.counter }}">
+                  {{ certificate.course_title }}
+                </button>
+            </p>
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample{{ forloop.counter }}">
+                    <div class="card card-body">
+                        <b>Skill: </b>{{ certificate.skill }}<br>
+                        <b>Issuing Organization: </b>{{ certificate.certificate_obtained_from }}<br>
+                        <b>Issue date: </b>{{ certificate.course_completion_date}}<br>
+                        <b>Credential URL: </b><a href="{{ certificate.certificate_link }}" target="_blank">{{ certificate.certificate_link }}</a><br>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<div class="card">
+  <h3 class="card-header">workexp.company</h3>
+  <div class="card-body">
+    <h3 class="card-title">{{ workexp.job_title }}</h3>
+    {% if workexp.end_date %}
+      <h3>{{ workexp.job_title }} at {{ workexp.company }} ({{ workexp.start_date }} - {{ workexp.end_date }}):</h3>
+    {% else %}
+      <h3>{{ workexp.job_title }} at {{ workexp.company }} ({{ workexp.start_date }} - Present):</h3>
+    {% endif %}
+    {% if workexp.prev_job_title1 %}<h5>Previous Designation: {{ workexp.prev_job_title1 }} </h5>{% endif %}
+    {% if workexp.prev_job_title2 %}<h5>Previous Designation: {{ workexp.prev_job_title2 }} </h5>{% endif %}
+    {% if workexp.prev_job_title3 %}<h5>Previous Designation: {{ workexp.prev_job_title3 }} </h5>{% endif %}
+
+    <p class="card-text">
+      <ul>
+        {% for desc in workexp.work_description %}
+          <li>{{ desc }}</li>
+        {% endfor %}
+      </ul>
+    </p>
+  </div>
+</div>
+
+
+
+<li>
+    {% if workexp.end_date %}
+        <h3>{{ workexp.job_title }} at {{ workexp.company }} ({{ workexp.start_date }} - {{ workexp.end_date }}):</h3>
+    {% else %}
+        <h3>{{ workexp.job_title }} at {{ workexp.company }} ({{ workexp.start_date }} - Present):</h3>
+    {% endif %}
+    {% if workexp.prev_job_title1 %}<h5>Previous Designation: {{ workexp.prev_job_title1 }} </h5>{% endif %}
+    {% if workexp.prev_job_title2 %}<h5>Previous Designation: {{ workexp.prev_job_title2 }} </h5>{% endif %}
+    {% if workexp.prev_job_title3 %}<h5>Previous Designation: {{ workexp.prev_job_title3 }} </h5>{% endif %}
+    <p>
+        <ul>
+        {% for desc in workexp.work_description %}
+            <li>{{ desc }}</li>
+        {% endfor %}
+        </ul>
+    </p>
+</li>

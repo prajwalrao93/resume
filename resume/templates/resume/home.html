@@ -1,0 +1,55 @@
+{% extends 'resume/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br><br>
+<div class="row">
+    <br>
+    <div class="card border-0" style="width: 20rem;">
+      <img src="{% static 'me.jpg' %}" class="rounded-pill mt-4" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Prajwal R Rao</h4>
+          <p class="card-text"><small>Senior Reporting Executive at YouGov</small></p>
+      </div>
+    </div>
+<br><br><br>
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card border-0">
+      <div class="card-body">
+        <h4 class="card-title">About me</h4>
+        <p class="card-text">Dedicated and results-driven Senior Reporting Executive with a proven track record of managing complex reporting projects and delivering actionable insights that drive strategic decision-making.<br>
+            As Senior Reporting Executive at YouGov, my journey has been defined by leveraging advanced Python skills, database management. Our team transforms complex datasets into strategic assets that drive decision-making processes.<br>
+            I've honed my competencies in Python, SQL which are instrumental in constructing robust reporting frameworks to harness data for a deeper understanding of the human experience.
+        </p>
+          <br>
+          <h5 class="card-title">Skills</h5>
+          <div class="container text-center">
+              <div class="row row-cols-auto">
+                  <div class="col">Python<br></div>
+                  <div class="col">Excel<br></div>
+                  <div class="col">SQL (MySQL, PostgreSQL)<br></div>
+                  <div class="col">Powerpoint</div>
+                  <div class="col">Django</div>
+                  <div class="col">pandas</div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br> <br>
+
+<div class="card border-0">
+  <div class="card-body">
+    <h5 class="card-title">Personal Details</h5>
+    <p class="card-text">
+        <br>9686480432
+        <br>rraoprajwal@gmail.com
+        <br><a href="https://www.linkedin.com/in/prajwal-r-rao-36a597aa/">Linkedin Profile link</a>
+        <br>Interest: Cycling, Gaming, Trekking, Travelling, Football
+    </p>
+  </div>
+</div>
+
+{% endblock %}

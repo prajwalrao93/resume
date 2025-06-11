@@ -1,0 +1,20 @@
+{% extends 'resume/base.html' %}
+
+{% block content %}
+
+<h1>Contact</h1>
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+{% endfor %}
+{% endif %}
+{% load crispy_forms_tags %}
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button>Submit</button>
+</form>
+
+{% endblock %}
