@@ -24,12 +24,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#u(hj!$1x+r41==*b$z+tm&*vmfjg5q1&yv$dqo-rk51ialjx9'
+SECRET_KEY = "django-insecure-#u(hj!$1x+r41==*b$z+tm&*vmfjg5q1&yv$dqo-rk51ialjx9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['resume-495b.onrender.com']
+ALLOWED_HOSTS = [
+    "https://resume-495b.onrender.com",
+    'resume-495b.onrender.com',
+    "44.226.145.213",
+    "54.187.200.255",
+    "34.213.214.55"
+    "35.164.95.156",
+    "44.230.95.183",
+    "44.229.200.200",
+]
 
 RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY") # site key
 RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY") # secret key
@@ -98,7 +107,12 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 }
-
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_PRELOAD = True
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
